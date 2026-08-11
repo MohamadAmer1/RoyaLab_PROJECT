@@ -1,0 +1,132 @@
+.header {
+  height: 15%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 3%;
+
+  background-color: #111;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50%;
+  gap: 10%;
+  transition: transform 0.25s ease;
+}
+
+.header-logo:has(a:hover) {
+  transform: scale(1.08);
+}
+.header-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 1.5%;
+  padding: 0 17% 0 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2vw;
+  white-space: nowrap;
+}
+
+.header-logo a:first-child {
+  color: rgb(191, 255, 0);
+
+  border: 2px solid rgb(191, 255, 0);
+  border-radius: 8px;
+
+  font-size: 150%;
+  padding: 6% 10%;
+}
+
+.header-logo a:nth-child(2) {
+  color: white;
+  font-size: 140%;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, white 0%, white 35%, rgb(191, 255, 0) 50%, white 65%, white 100%);
+
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+.royal-text {
+  animation: royalGlow 2s ease-in-out infinite alternate;
+}
+
+.lab-text {
+  animation: labGlow 2s ease-in-out infinite alternate;
+}
+@keyframes royalGlow {
+  from {
+    text-shadow: 0 0 1px rgb(191, 255, 0);
+  }
+
+  to {
+    text-shadow: 0 0 5px rgb(191, 255, 0);
+  }
+}
+
+@keyframes labGlow {
+  from {
+    text-shadow: 0 0 1px rgb(0, 240, 255);
+  }
+
+  to {
+    text-shadow: 0 0 5px rgb(0, 240, 255);
+  }
+}
+
+.header-links a.active {
+  background-color: rgb(191, 255, 0);
+  color: black;
+}
+
+.header-links a {
+  padding: 3% 3%;
+  border-radius: 6px;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
+.header-links a:hover {
+  background-color: rgb(191, 255, 0);
+  color: black;
+  transform: scale(1.08);
+}
+
+@media (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+
+    height: auto;
+    padding: 2% 2%;
+    gap: 2vh;
+  }
+
+  .header-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 1vh 2vw;
+    padding: 0;
+  }
+
+  .header a {
+    font-size: 1.2rem;
+  }
+}
