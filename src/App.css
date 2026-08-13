@@ -11,4 +11,153 @@ body {
 #root {
   height: 100%;
   width: 100%;
+  position: relative;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(ellipse 55% 35% at 50% 100%, rgb(30, 21, 42) 0%, rgb(46, 28, 66) 35%, rgba(46, 28, 66, 0.4) 55%, transparent 75%),
+    radial-gradient(circle at 15% 25%, rgba(45, 35, 90, 0.45), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(25, 38, 80, 0.35), transparent 35%), rgb(23, 20, 55);
+}
+
+/****************************/
+.bubbles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -10%;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  animation: bubbleRise 18s linear infinite;
+}
+
+.bubbles span:nth-child(1) {
+  left: 8%;
+  background-color: rgba(191, 255, 0, 0.35);
+  animation-duration: 20s;
+}
+
+.bubbles span:nth-child(2) {
+  left: 25%;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 240, 255, 0.4);
+  animation-duration: 26s;
+  animation-delay: 4s;
+}
+
+.bubbles span:nth-child(3) {
+  left: 98%;
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 215, 90, 0.3);
+  animation-duration: 23s;
+  animation-delay: 8s;
+}
+
+.bubbles span:nth-child(4) {
+  left: 61%;
+  width: 9px;
+  height: 9px;
+  background-color: rgba(135, 100, 255, 0.35);
+  animation-duration: 28s;
+  animation-delay: 2s;
+}
+
+.bubbles span:nth-child(5) {
+  left: 88%;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(0, 240, 255, 0.28);
+  animation-duration: 22s;
+  animation-delay: 7s;
+}
+
+.bubbles span:nth-child(6) {
+  left: 55%;
+  width: 11px;
+  height: 11px;
+  background-color: rgba(191, 255, 0, 0.3);
+  animation-duration: 14s;
+  animation-delay: 11s;
+}
+
+.bubbles span:nth-child(7) {
+  left: 4%;
+  background-color: rgba(219, 255, 112, 0.35);
+  animation-duration: 17s;
+  animation-delay: 1s;
+}
+
+.bubbles span:nth-child(8) {
+  left: 37%;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 240, 255, 0.4);
+  animation-duration: 26s;
+  animation-delay: 8s;
+}
+
+.bubbles span:nth-child(9) {
+  left: 82%;
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 215, 90, 0.3);
+  animation-duration: 23s;
+  animation-delay: 15s;
+}
+
+.bubbles span:nth-child(10) {
+  left: 61%;
+  width: 9px;
+  height: 9px;
+  background-color: rgba(135, 100, 255, 0.35);
+  animation-duration: 15s;
+}
+
+.bubbles span:nth-child(11) {
+  left: 77%;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 240, 255, 0.28);
+  animation-duration: 22s;
+  animation-delay: 12s;
+}
+
+.bubbles span:nth-child(12) {
+  left:43%;
+  width: 11px;
+  height: 11px;
+  background-color: rgba(191, 255, 0, 0.3);
+  animation-duration: 16s;
+}
+
+@keyframes bubbleRise {
+  from {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateY(-120vh) scale(1.15);
+    opacity: 0;
+  }
 }

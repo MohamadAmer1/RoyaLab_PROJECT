@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import AboutWeb from "./pages/AboutWeb";
 import Cards from "./pages/Cards";
 import ArenaMeta from "./pages/ArenaMeta";
@@ -8,7 +8,7 @@ import DeckBuilder from "./pages/DeckBuilder";
 import Community from "./pages/Community";
 import SuggestedDecks from "./pages/SuggestedDecks";
 import PageNotFound from "./components/PageNotFound";
-import "./App.css"
+import "./App.css";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -51,5 +51,23 @@ export default function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <div className="bubbles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </>
+  );
 }

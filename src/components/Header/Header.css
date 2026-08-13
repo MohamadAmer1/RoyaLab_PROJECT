@@ -1,13 +1,11 @@
 .header {
   height: 15%;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 3%;
-
   background-color: #111;
 }
 
@@ -45,13 +43,12 @@
   border: 2px solid rgb(191, 255, 0);
   border-radius: 8px;
 
-  font-size: 150%;
+  font-size: 200%;
   padding: 6% 10%;
 }
 
 .header-logo a:nth-child(2) {
-  color: white;
-  font-size: 140%;
+  font-size: 200%;
   font-weight: bold;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background: linear-gradient(90deg, white 0%, white 35%, rgb(191, 255, 0) 50%, white 65%, white 100%);
@@ -62,6 +59,56 @@
 
   color: transparent;
 }
+/* 
+.royal-text {
+  background: linear-gradient(
+    90deg,
+    rgb(191, 255, 0),
+    rgb(255, 204, 38),
+    rgb(191, 255, 0)
+  );
+
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: royalMove 4s linear infinite;}
+
+.lab-text {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 240, 255),
+    rgb(125, 69, 255),
+    rgb(0, 240, 255)
+  );
+
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: labMove 4s linear infinite;}
+
+  @keyframes royalMove {
+  from {
+    background-position: -150% 0;
+  }
+
+  to {
+    background-position: 150% 0;
+  }
+}
+
+@keyframes labMove {
+  from {
+    background-position: 150% 0;
+  }
+
+  to {
+    background-position: -150% 0;
+  }
+} */
 
 .royal-text {
   animation: royalGlow 2s ease-in-out infinite alternate;
@@ -100,7 +147,8 @@
   border-radius: 6px;
   transition:
     background-color 0.5s ease,
-    color 0.5s ease;
+    color 0.5s ease,
+    transform 0.25s ease;
 }
 
 .header-links a:hover {
@@ -125,7 +173,9 @@
     gap: 1vh 2vw;
     padding: 0;
   }
-
+  .header-logo {
+    padding: 0 6% 0 0;
+  }
   .header a {
     font-size: 1.2rem;
   }
