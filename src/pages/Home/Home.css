@@ -40,18 +40,10 @@
   margin: 0 0 2% 0;
 }
 
-.home-title .royal-text {
-  color: rgb(191, 255, 0);
-}
-
-.home-title .lab-text {
-  color: rgb(0, 240, 255);
-}
-
 .home-description {
   width: 75%;
 
-  color: white;
+  color: rgb(191, 255, 0);
 
   text-align: center;
 

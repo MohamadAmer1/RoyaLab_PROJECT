@@ -7,7 +7,7 @@ export default function Home() {
         <h1 className="home-crown">♛</h1>
 
         <h1 className="home-title">
-          <span className="royal-text">Royale</span>
+          <span className="royal-text">Roya</span>
           <span className="lab-text">Lab</span>
         </h1>
 

@@ -59,81 +59,35 @@
 
   color: transparent;
 }
-/* 
-.royal-text {
-  background: linear-gradient(
-    90deg,
-    rgb(191, 255, 0),
-    rgb(255, 204, 38),
-    rgb(191, 255, 0)
-  );
-
-  background-size: 250% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-
-  animation: royalMove 4s linear infinite;}
-
-.lab-text {
-  background: linear-gradient(
-    90deg,
-    rgb(0, 240, 255),
-    rgb(125, 69, 255),
-    rgb(0, 240, 255)
-  );
-
-  background-size: 250% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-
-  animation: labMove 4s linear infinite;}
-
-  @keyframes royalMove {
-  from {
-    background-position: -150% 0;
-  }
-
-  to {
-    background-position: 150% 0;
-  }
-}
-
-@keyframes labMove {
-  from {
-    background-position: 150% 0;
-  }
-
-  to {
-    background-position: -150% 0;
-  }
-} */
 
 .royal-text {
-  animation: royalGlow 2s ease-in-out infinite alternate;
+  animation: royalGlow 1.5s ease-in-out infinite alternate;
+  color: rgb(255, 255, 255);
 }
 
 .lab-text {
-  animation: labGlow 2s ease-in-out infinite alternate;
+  animation: labGlow 1.5s ease-in-out infinite alternate;
+  color: rgb(0, 240, 255);
 }
+
+
 @keyframes royalGlow {
   from {
-    text-shadow: 0 0 1px rgb(191, 255, 0);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
   }
 
   to {
-    text-shadow: 0 0 5px rgb(191, 255, 0);
+    text-shadow: 0 0 10px rgb(255, 255, 255);
   }
 }
 
 @keyframes labGlow {
   from {
-    text-shadow: 0 0 1px rgb(0, 240, 255);
+    text-shadow: 0 0 2px rgb(0, 240, 255);
   }
 
   to {
-    text-shadow: 0 0 5px rgb(0, 240, 255);
+    text-shadow: 0 0 10px rgb(0, 240, 255);
   }
 }
 

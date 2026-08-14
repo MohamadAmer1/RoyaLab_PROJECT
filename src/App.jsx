@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout";
 import Home from "./pages/Home/Home";
-import AboutWeb from "./pages/AboutWeb";
-import Cards from "./pages/Cards";
+import About from "./pages/About/About";
+import Cards from "./pages/Cards/Cards";
 import ArenaMeta from "./pages/ArenaMeta";
 import DeckBuilder from "./pages/DeckBuilder";
 import Community from "./pages/Community";
@@ -22,7 +22,7 @@ export default function App() {
         },
         {
           path: "/aboutweb",
-          element: <AboutWeb />,
+          element: <About />,
         },
         {
           path: "/cards",
