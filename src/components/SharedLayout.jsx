@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header/Header";
+import RoyaLabProvider from "../context/RoyaLabContext";
 
 export default function SharedLayout() {
   return (
-    <>
-        <Header/>
-        <Outlet/>
-    </>
-  )
+    <RoyaLabProvider>
+      <Header />
+      <Outlet />
+    </RoyaLabProvider>
+  );
 }
