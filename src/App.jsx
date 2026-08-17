@@ -3,7 +3,7 @@ import SharedLayout from "./components/SharedLayout";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Cards from "./pages/Cards/Cards";
-import DeckBuilder from "./pages/DeckBuilder";
+import DeckBuilder from "./pages/DeckBuilder/DeckBuilder";
 import Community from "./pages/Community";
 import SuggestedDecks from "./pages/SuggestedDecks";
 import PageNotFound from "./components/PageNotFound";

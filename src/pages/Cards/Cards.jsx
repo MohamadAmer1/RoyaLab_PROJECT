@@ -2,7 +2,7 @@ import { useCards } from "../../context/RoyaLabContext";
 import { Droplet, Search, SlidersHorizontal, X } from "lucide-react";
 import "./Card.css";
 import { useState } from "react";
-import cardLogic from "../../helper/cardLogic.js";
+import cardsHelper from "../../helper/cardsHelper.js";
 export default function Cards() {
   const { cards } = useCards();
 
@@ -12,7 +12,7 @@ export default function Cards() {
   const [hasEvolution, setHasEvolution] = useState(false);
   const [sortBy, setSortBy] = useState("az");
 
-  let sortedCards = cardLogic(cards, rarity, arena, hasEvolution, sortBy, search);
+  let sortedCards = cardsHelper(cards, rarity, arena, hasEvolution, sortBy, search);
 
   return (
     <div className="page-grid">

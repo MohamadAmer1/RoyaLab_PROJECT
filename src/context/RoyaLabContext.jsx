@@ -26,7 +26,7 @@ function RoyaLabProvider({ children }) {
 
   async function sendDeck(deck) {
     try {
-      const id = Date.now().toString();
+      const id = `${deck.name.trim().toLowerCase().replaceAll(" ", "-")}-${Date.now()}`;
       const deckData = { ...deck, id };
       await setDoc(doc(db, "decks", id), deckData);
       console.log("New deck uploaded successfully");

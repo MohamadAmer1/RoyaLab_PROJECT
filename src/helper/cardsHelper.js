@@ -1,4 +1,4 @@
-export default function cardLogic(cards, rarity, arena, hasEvolution, sortBy, search) {
+export default function cardsHelper(cards, rarity, arena, hasEvolution, sortBy, search) {
   let filteredCards = cards.filter((card) => {
     return card.name.toLowerCase().includes(search.toLowerCase());
   });
