@@ -5,7 +5,7 @@ import About from "./pages/About/About";
 import Cards from "./pages/Cards/Cards";
 import DeckBuilder from "./pages/DeckBuilder/DeckBuilder";
 import Community from "./pages/Community";
-import SuggestedDecks from "./pages/SuggestedDecks";
+import SuggestedDecks from "./pages/SuggestedDecks/SuggestedDecks";
 import PageNotFound from "./components/PageNotFound";
 import "./App.css";
 

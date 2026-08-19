@@ -1,12 +1,11 @@
 import { Search, X, Droplet } from "lucide-react";
-import { useCards } from "../../context/RoyaLabContext";
+import { useRoyaLab } from "../../context/RoyaLabContext";
 import "./DeckBuilder.css";
 import useDeckBuilder from "../../hooks/useDeckBuilder";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 export default function DeckBuilder() {
-  const { cards, sendDeck } = useCards();
-
+  const { cards } = useRoyaLab();
   const {
     search,
     setSearch,
@@ -19,7 +18,7 @@ export default function DeckBuilder() {
     elixirCurve,
     averageElixir,
     handleSaveDeck,
-  } = useDeckBuilder(cards, sendDeck);
+  } = useDeckBuilder(cards);
 
   return (
     <div className="page-grid">
@@ -125,6 +124,7 @@ export default function DeckBuilder() {
                   <input
                     id="deck-name"
                     type="text"
+                    maxLength={15}
                     placeholder="Enter deck name..."
                     value={deck.name}
                     onChange={(e) =>

@@ -1,10 +1,10 @@
-import { useCards } from "../../context/RoyaLabContext";
+import { useRoyaLab } from "../../context/RoyaLabContext";
 import { Droplet, Search, SlidersHorizontal, X } from "lucide-react";
 import "./Card.css";
 import { useState } from "react";
 import cardsHelper from "../../helper/cardsHelper.js";
 export default function Cards() {
-  const { cards } = useCards();
+  const { cards } = useRoyaLab();
 
   const [search, setSearch] = useState("");
   const [rarity, setRarity] = useState("All");

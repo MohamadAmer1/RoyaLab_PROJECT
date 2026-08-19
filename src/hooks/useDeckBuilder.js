@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useRoyaLab } from "../context/RoyaLabContext";
 
-export default function useDeckBuilder(cards, sendDeck) {
+export default function useDeckBuilder() {
+  const { cards, sendDeck, getDecks } = useRoyaLab();
   const [search, setSearch] = useState("");
 
   const [selectedCards, setSelectedCards] = useState([]);
@@ -22,6 +24,10 @@ export default function useDeckBuilder(cards, sendDeck) {
   });
 
   function handleSelectCard(card) {
+    if (deck.arena === "") {
+      alert("Please enter an arena.");
+      return;
+    }
     const isSelected = selectedCards.some((selectedCard) => selectedCard.id === card.id);
 
     if (isSelected) {
@@ -96,7 +102,7 @@ export default function useDeckBuilder(cards, sendDeck) {
     };
 
     await sendDeck(deckData);
-
+    await getDecks();
     setSelectedCards([]);
 
     setDeck({
