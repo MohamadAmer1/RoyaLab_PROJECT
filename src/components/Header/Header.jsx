@@ -15,8 +15,8 @@ export default function Header() {
         <NavLink to="/aboutweb">About</NavLink>
         <NavLink to="/cards">Cards</NavLink>
         <NavLink to="/buildyourdeck">Deck Builder</NavLink>
-        <NavLink to="/community">Community</NavLink>
         <NavLink to="/decks">Suggested Decks</NavLink>
+        <NavLink to="/community">Community</NavLink>
       </div>
     </div>
   );
