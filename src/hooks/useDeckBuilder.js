@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRoyaLab } from "../context/RoyaLabContext";
+import { toast } from "react-toastify";
 
 export default function useDeckBuilder() {
   const { cards, sendDeck, getDecks } = useRoyaLab();
@@ -25,7 +26,7 @@ export default function useDeckBuilder() {
 
   function handleSelectCard(card) {
     if (deck.arena === "") {
-      alert("Please enter an arena.");
+      toast.error("Please enter an arena.");
       return;
     }
     const isSelected = selectedCards.some((selectedCard) => selectedCard.id === card.id);
@@ -75,22 +76,22 @@ export default function useDeckBuilder() {
 
   async function handleSaveDeck() {
     if (deck.name.trim() === "") {
-      alert("Please enter a deck name.");
+      toast.error("Please enter a deck name.");
       return;
     }
 
     if (deck.arena === "") {
-      alert("Please enter an arena.");
+      toast.error("Please enter an arena.");
       return;
     }
 
     if (selectedCards.length !== 8) {
-      alert(`Please select 8 cards. You currently have ${selectedCards.length}.`);
+      toast.error(`Please select 8 cards. You currently have ${selectedCards.length}.`);
       return;
     }
 
     if (deck.notes.trim() === "") {
-      alert("Please add notes about the trophy range and why the deck is suitable.");
+      toast.error("Please add notes about the trophy range and why the deck is suitable.");
       return;
     }
 

@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+import { useRoyaLab } from "../../context/RoyaLabContext";
+import homeHelper from "../../helper/homeHelper";
+
 export default function Home() {
+  const { cards } = useRoyaLab();
+
+  const {
+    totalCards,
+    averageWinRate,
+    averageUseRate,
+    evolutionCards,
+    mostUsedCards,
+    highestWinRateCards,
+  } = homeHelper(cards);
+
   return (
     <div className="home">
       <div className="home-content">
@@ -12,7 +26,8 @@ export default function Home() {
         </h1>
 
         <h2 className="home-description">
-          The ultimate Clash Royale analytics platform. Explore cards, build decks, track the meta, and shape the future of balance.
+          The ultimate Clash Royale analytics platform. Explore cards, build
+          decks, track the meta, and shape the future of balance.
         </h2>
 
         <div className="home-actions">
@@ -26,7 +41,7 @@ export default function Home() {
             <div className="stat-icon">🃏</div>
 
             <div className="stat-info">
-              <p>21</p>
+              <p>{totalCards}</p>
               <p>Total Cards</p>
             </div>
           </div>
@@ -35,7 +50,7 @@ export default function Home() {
             <div className="stat-icon">📈</div>
 
             <div className="stat-info">
-              <p>21%</p>
+              <p>{averageWinRate}%</p>
               <p>Avg Win Rate</p>
             </div>
           </div>
@@ -44,7 +59,7 @@ export default function Home() {
             <div className="stat-icon">📉</div>
 
             <div className="stat-info">
-              <p>21%</p>
+              <p>{averageUseRate}%</p>
               <p>Avg Usage Rate</p>
             </div>
           </div>
@@ -53,39 +68,90 @@ export default function Home() {
             <div className="stat-icon">🧬</div>
 
             <div className="stat-info">
-              <p>11</p>
+              <p>{evolutionCards}</p>
               <p>Evolution Cards</p>
             </div>
           </div>
         </div>
+
         <div className="home-card-sections">
           <div className="card-section">
             <div className="card-section-header">
               <p>🔥 Most Used Cards</p>
+
               <Link to="/cards">View here →</Link>
             </div>
 
             <div className="card-slots">
-              <div className="card-placeholder"></div>
-              <div className="card-placeholder"></div>
-              <div className="card-placeholder"></div>
-              <div className="card-placeholder"></div>
+              {mostUsedCards.map((card) => {
+                return (
+                  <div className="home-card-preview" key={card.id}>
+                    <div className="home-card-image-container">
+                      <img
+                        src={card.imageUrl}
+                        alt={card.name}
+                        className="home-card-image"
+                      />
+                    </div>
+
+                    <p className="home-card-name">{card.name}</p>
+
+                    <div className="home-card-rates">
+                      <div className="home-rate-box">
+                        <span>Win Rate</span>
+                        <strong>{card.winRate}%</strong>
+                      </div>
+
+                      <div className="home-rate-box">
+                        <span>Usage Rate</span>
+                        <strong>{card.useRate}%</strong>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div className="card-section">
             <div className="card-section-header">
               <p>❄️ Highest Win Rate Cards</p>
+
+              <Link to="/cards">View here →</Link>
             </div>
 
             <div className="card-slots">
-              <div className="card-placeholder"></div>
-              <div className="card-placeholder"></div>
-              <div className="card-placeholder"></div>
-              <div className="card-placeholder"></div>
+              {highestWinRateCards.map((card) => {
+                return (
+                  <div className="home-card-preview" key={card.id}>
+                    <div className="home-card-image-container">
+                      <img
+                        src={card.imageUrl}
+                        alt={card.name}
+                        className="home-card-image"
+                      />
+                    </div>
+
+                    <p className="home-card-name">{card.name}</p>
+
+                    <div className="home-card-rates">
+                      <div className="home-rate-box">
+                        <span>Win Rate</span>
+                        <strong>{card.winRate}%</strong>
+                      </div>
+
+                      <div className="home-rate-box">
+                        <span>Usage Rate</span>
+                        <strong>{card.useRate}%</strong>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
+
         <div className="home-extra-actions">
           <div className="extra-action">
             <span>🛠️</span>

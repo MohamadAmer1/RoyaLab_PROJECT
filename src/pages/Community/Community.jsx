@@ -7,9 +7,11 @@ import useCommunitySuggestions from "../../hooks/useCommunitySuggestions";
 
 export default function Community() {
   const { cards, sendComments, getComments, comments, updateCommentLikes } = useRoyaLab();
-console.log(cards);
+  console.log(cards);
 
   const {
+    totalSuggestions,
+    totalVotes,
     showSuggestionForm,
     suggestionName,
     cardSearch,
@@ -33,7 +35,7 @@ console.log(cards);
     handlePostSuggestion,
     handleLike,
     handleDislike,
-  } = useCommunitySuggestions(cards, sendComments, getComments, updateCommentLikes);
+  } = useCommunitySuggestions(cards, sendComments, getComments, updateCommentLikes, comments);
   return (
     <div className="community-page">
       <div className="community-header">
@@ -45,13 +47,13 @@ console.log(cards);
 
         <div className="community-header-stats">
           <div className="community-stat">
-            <span className="community-stat-number">112</span>
+            <span className="community-stat-number">{totalSuggestions}</span>
 
             <span className="community-stat-label">Suggestions</span>
           </div>
 
           <div className="community-stat">
-            <span className="community-stat-number">3462</span>
+            <span className="community-stat-number">{totalVotes}</span>
 
             <span className="community-stat-label">Total Votes</span>
           </div>

@@ -1,36 +1,25 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-export default function useCommunitySuggestions(
-  cards,
-  sendComments,
-  getComments,
-  updateCommentLikes
-) {
+export default function useCommunitySuggestions(cards, sendComments, getComments, updateCommentLikes, comments) {
   const [showSuggestionForm, setShowSuggestionForm] = useState(false);
 
   const [suggestionName, setSuggestionName] = useState("");
-
   const [cardSearch, setCardSearch] = useState("");
-
   const [selectedCard, setSelectedCard] = useState(null);
-
   const [suggestionType, setSuggestionType] = useState("");
-
   const [comment, setComment] = useState("");
-
   const [sortBy, setSortBy] = useState("All");
-
   const [typeFilter, setTypeFilter] = useState("All Types");
-
   const [votedComments, setVotedComments] = useState({});
 
-  const cardOptions = cards
-    .filter((card) =>
-      card.name
-        .toLowerCase()
-        .includes(cardSearch.toLowerCase())
-    )
-    .slice(0, 5);
+  const totalSuggestions = comments.length;
+
+  const totalVotes = comments.reduce((sum, savedComment) => {
+    return sum + Number(savedComment.like || 0);
+  }, 0);
+
+  const cardOptions = cards.filter((card) => card.name.toLowerCase().includes(cardSearch.toLowerCase())).slice(0, 5);
 
   function handleToggleSuggestionForm() {
     setShowSuggestionForm((prev) => !prev);
@@ -38,26 +27,17 @@ export default function useCommunitySuggestions(
 
   function handleCardSearch(e) {
     setCardSearch(e.target.value);
-
     setSelectedCard(null);
   }
 
   function handleSelectCard(card) {
     setSelectedCard(card);
-
     setCardSearch(card.name);
   }
 
   async function handlePostSuggestion() {
-    if (
-      suggestionName.trim() === "" ||
-      selectedCard === null ||
-      suggestionType === "" ||
-      comment.trim() === ""
-    ) {
-      alert(
-        "Please fill in all the fields before posting your suggestion."
-      );
+    if (suggestionName.trim() === "" || selectedCard === null || suggestionType === "" || comment.trim() === "") {
+      toast.error("Please fill in all the fields before posting your suggestion.");
 
       return;
     }
@@ -87,10 +67,7 @@ export default function useCommunitySuggestions(
 
     const newLikes = savedComment.like + 1;
 
-    await updateCommentLikes(
-      savedComment.id,
-      newLikes
-    );
+    await updateCommentLikes(savedComment.id, newLikes);
 
     await getComments();
 
@@ -101,19 +78,13 @@ export default function useCommunitySuggestions(
   }
 
   async function handleDislike(savedComment) {
-    if (
-      votedComments[savedComment.id] ||
-      savedComment.like === 0
-    ) {
+    if (votedComments[savedComment.id] || savedComment.like === 0) {
       return;
     }
 
     const newLikes = savedComment.like - 1;
 
-    await updateCommentLikes(
-      savedComment.id,
-      newLikes
-    );
+    await updateCommentLikes(savedComment.id, newLikes);
 
     await getComments();
 
@@ -134,6 +105,9 @@ export default function useCommunitySuggestions(
     typeFilter,
     sortBy,
     votedComments,
+
+    totalSuggestions,
+    totalVotes,
 
     setSuggestionName,
     setSuggestionType,

@@ -400,6 +400,61 @@
   box-shadow: 0 0 12px rgba(255, 0, 0, 0.35);
 }
 
+.no-suggested-decks {
+  width: 100%;
+
+  padding: 8% 4%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+
+  text-align: center;
+
+  background: rgb(17, 18, 25);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+}
+
+.no-suggested-decks-icons {
+  display: flex;
+  align-items: center;
+
+  gap: 15%;
+}
+
+.no-suggested-decks-icons svg {
+  width: 40px;
+  height: 40px;
+}
+
+.no-suggested-decks-icons svg:first-child {
+  color: rgb(255, 157, 0);
+}
+
+.no-suggested-decks-icons svg:last-child {
+  color: rgb(0, 240, 255);
+}
+
+.no-suggested-decks h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(18px, 2vw, 28px);
+}
+
+.no-suggested-decks p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: clamp(12px, 1.1vw, 16px);
+}
+
 /*****************************************/
 /* RESPONSIVE */
 /*****************************************/
