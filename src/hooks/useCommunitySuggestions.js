@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-export default function useCommunitySuggestions(cards, sendComments, getComments, updateCommentLikes, comments) {
+export default function useCommunitySuggestions(
+  cards,
+  sendComments,
+  getComments,
+  updateCommentLikes,
+  comments
+) {
   const [showSuggestionForm, setShowSuggestionForm] = useState(false);
 
   const [suggestionName, setSuggestionName] = useState("");
@@ -9,8 +15,10 @@ export default function useCommunitySuggestions(cards, sendComments, getComments
   const [selectedCard, setSelectedCard] = useState(null);
   const [suggestionType, setSuggestionType] = useState("");
   const [comment, setComment] = useState("");
+
   const [sortBy, setSortBy] = useState("All");
   const [typeFilter, setTypeFilter] = useState("All Types");
+
   const [votedComments, setVotedComments] = useState({});
 
   const totalSuggestions = comments.length;
@@ -19,7 +27,37 @@ export default function useCommunitySuggestions(cards, sendComments, getComments
     return sum + Number(savedComment.like || 0);
   }, 0);
 
-  const cardOptions = cards.filter((card) => card.name.toLowerCase().includes(cardSearch.toLowerCase())).slice(0, 5);
+  const cardOptions = cards
+    .filter((card) =>
+      card.name
+        .toLowerCase()
+        .includes(cardSearch.toLowerCase())
+    )
+    .slice(0, 5);
+
+  const filteredComments = comments
+    .filter((savedComment) => {
+      if (typeFilter === "All Types") {
+        return true;
+      }
+
+      return savedComment.type === typeFilter;
+    })
+    .sort((a, b) => {
+      if (sortBy === "A-Z") {
+        return a.name.localeCompare(b.name);
+      }
+
+      if (sortBy === "Likes ↑") {
+        return Number(a.like || 0) - Number(b.like || 0);
+      }
+
+      if (sortBy === "Likes ↓") {
+        return Number(b.like || 0) - Number(a.like || 0);
+      }
+
+      return 0;
+    });
 
   function handleToggleSuggestionForm() {
     setShowSuggestionForm((prev) => !prev);
@@ -36,8 +74,15 @@ export default function useCommunitySuggestions(cards, sendComments, getComments
   }
 
   async function handlePostSuggestion() {
-    if (suggestionName.trim() === "" || selectedCard === null || suggestionType === "" || comment.trim() === "") {
-      toast.error("Please fill in all the fields before posting your suggestion.");
+    if (
+      suggestionName.trim() === "" ||
+      selectedCard === null ||
+      suggestionType === "" ||
+      comment.trim() === ""
+    ) {
+      toast.error(
+        "Please fill in all the fields before posting your suggestion."
+      );
 
       return;
     }
@@ -65,7 +110,7 @@ export default function useCommunitySuggestions(cards, sendComments, getComments
       return;
     }
 
-    const newLikes = savedComment.like + 1;
+    const newLikes = Number(savedComment.like || 0) + 1;
 
     await updateCommentLikes(savedComment.id, newLikes);
 
@@ -78,11 +123,14 @@ export default function useCommunitySuggestions(cards, sendComments, getComments
   }
 
   async function handleDislike(savedComment) {
-    if (votedComments[savedComment.id] || savedComment.like === 0) {
+    if (
+      votedComments[savedComment.id] ||
+      Number(savedComment.like || 0) === 0
+    ) {
       return;
     }
 
-    const newLikes = savedComment.like - 1;
+    const newLikes = Number(savedComment.like || 0) - 1;
 
     await updateCommentLikes(savedComment.id, newLikes);
 
@@ -108,6 +156,8 @@ export default function useCommunitySuggestions(cards, sendComments, getComments
 
     totalSuggestions,
     totalVotes,
+
+    filteredComments,
 
     setSuggestionName,
     setSuggestionType,

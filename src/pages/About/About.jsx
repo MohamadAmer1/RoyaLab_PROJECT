@@ -173,8 +173,12 @@ export default function About() {
           <span className="tech-box">React</span>
           <span className="tech-box">JavaScript</span>
           <span className="tech-box">Firebase</span>
+          <span className="tech-box">Firestore</span>
           <span className="tech-box">React Router</span>
           <span className="tech-box">Lucide React</span>
+          <span className="tech-box">Recharts</span>
+          <span className="tech-box">React Toastify</span>
+          <span className="tech-box">CSS</span>
         </div>
       </div>
     </div>
