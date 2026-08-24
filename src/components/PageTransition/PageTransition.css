@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+.page-transition-wrapper {
+  width: 100%;
+
+  perspective: 1400px;
+
+  overflow: visible;
+}
+
+.page-transition {
+  width: 100%;
+
+  transform-origin: left center;
+
+  animation: pageTurn 0.6s ease-out;
+}
+
+@keyframes pageTurn {
+  0% {
+    opacity: 0;
+
+    transform:
+      rotateY(-75deg)
+      translateX(-30px);
+
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.5);
+  }
+
+  50% {
+    opacity: 0.8;
+
+    transform:
+      rotateY(-25deg)
+      translateX(-10px);
+
+    box-shadow: 12px 0 25px rgba(0, 0, 0, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      rotateY(0deg)
+      translateX(0);
+
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.left-to-right-transition {
+  animation: leftToRight 0.6s ease-out;
+}
+
+@keyframes leftToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,517 @@
+.suggested-decks {
+  width: 90%;
+  margin: 4% auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.suggested-deck-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  column-gap: 2%;
+}
+
+.suggested-deck-row .deck-box {
+  flex: 1;
+}
+/*****************************************/
+/* DECK BOX */
+/*****************************************/
+
+.deck-box {
+  width: 100%;
+  padding: 3%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  background: rgb(17, 18, 25);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.deck-box:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(191, 255, 0, 0.8);
+
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.08),
+    inset 0 0 15px rgba(0, 240, 255, 0.02);
+}
+
+/*****************************************/
+/* DECK HEADER */
+/*****************************************/
+
+.deck-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deck-header span {
+  color: white;
+
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-weight: 700;
+}
+
+/*****************************************/
+/* UPDATE BUTTON */
+/*****************************************/
+
+.deck-update-button {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 240, 255, 0.08);
+  color: rgb(0, 240, 255);
+
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.deck-update-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.deck-update-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 240, 255, 0.15);
+  border-color: rgb(0, 240, 255);
+
+  box-shadow:
+    0 0 10px rgba(0, 240, 255, 0.25),
+    inset 0 0 8px rgba(0, 240, 255, 0.08);
+}
+
+.deck-edit-actions {
+  display: flex;
+  align-items: center;
+
+  column-gap: 8%;
+}
+
+.deck-cancel-button,
+.deck-submit-button {
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.deck-cancel-button {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.deck-cancel-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateY(-2px);
+}
+
+.deck-submit-button {
+  background: rgba(191, 255, 0, 0.12);
+  color: rgb(191, 255, 0);
+
+  border: 1px solid rgb(191, 255, 0);
+
+  box-shadow: 0 0 8px rgba(191, 255, 0, 0.15);
+}
+
+.deck-submit-button:hover {
+  background: rgba(191, 255, 0, 0.2);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 12px rgba(191, 255, 0, 0.3);
+}
+/*****************************************/
+/* DECK CARDS */
+/*****************************************/
+
+.suggested-deck-cards {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: 2%;
+  row-gap: 1rem;
+}
+
+.suggested-deck-card {
+  width: 10.75%;
+  min-width: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1%;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.suggested-deck-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(0, 240, 255, 0.5);
+
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+}
+
+.suggested-deck-card img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/*****************************************/
+/* DECK INFORMATION */
+/*****************************************/
+
+.deck-info {
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+
+  column-gap: 2%;
+}
+
+.deck-info-item {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  padding: 2%;
+
+  text-align: center;
+
+  background: rgba(0, 240, 255, 0.04);
+
+  border: 1px solid rgba(0, 240, 255, 0.16);
+  border-radius: 8px;
+}
+
+.deck-info .deck-info-item span:first-child {
+  color: white;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.deck-info-item span:first-child {
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 500;
+}
+
+.deck-info-item span:last-child {
+  color: white;
+
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  font-weight: 600;
+}
+
+.deck-info-item:first-child {
+  background: rgba(191, 255, 0, 0.05);
+
+  border-color: rgba(191, 255, 0, 0.3);
+}
+
+.deck-info-item:first-child span:last-child {
+  color: rgb(191, 255, 0);
+}
+
+.deck-info-item:last-child {
+  background: rgba(0, 240, 255, 0.05);
+
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.deck-info-item:last-child span:last-child {
+  color: rgb(0, 240, 255);
+}
+
+.deck-edit-input {
+  width: 60%;
+  padding: 1.5% 2%;
+
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 8px;
+
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.deck-edit-input:focus {
+  border-color: rgb(0, 240, 255);
+
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/*****************************************/
+/* DATA EDIT */
+/*****************************************/
+
+.deck-edit-textarea {
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+
+  min-height: 80px;
+  padding: 3%;
+
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 8px;
+
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+
+  outline: none;
+
+  resize: vertical;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.deck-edit-textarea:focus {
+  border-color: rgb(0, 240, 255);
+
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/*****************************************/
+/* DELETE BUTTON */
+/*****************************************/
+
+.deck-delete-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-delete-button {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgb(220, 55, 55);
+  color: rgba(255, 255, 255, 0.75);
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.deck-delete-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.deck-delete-button:hover {
+  background: rgb(255, 0, 0);
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.35);
+}
+
+.no-suggested-decks {
+  width: 100%;
+
+  padding: 8% 4%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+
+  text-align: center;
+
+  background: rgb(17, 18, 25);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+}
+
+.no-suggested-decks-icons {
+  display: flex;
+  align-items: center;
+
+  gap: 15%;
+}
+
+.no-suggested-decks-icons svg {
+  width: 40px;
+  height: 40px;
+}
+
+.no-suggested-decks-icons svg:first-child {
+  color: rgb(255, 157, 0);
+}
+
+.no-suggested-decks-icons svg:last-child {
+  color: rgb(0, 240, 255);
+}
+
+.no-suggested-decks h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(18px, 2vw, 28px);
+}
+
+.no-suggested-decks p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: clamp(12px, 1.1vw, 16px);
+}
+
+/*****************************************/
+/* RESPONSIVE */
+/*****************************************/
+
+@media (max-width: 1000px) {
+  .suggested-deck-card {
+    width: 23.5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .deck-header {
+    flex-wrap: wrap;
+    row-gap: 0.7rem;
+  }
+  .suggested-decks {
+    width: 94%;
+  }
+
+  .deck-box {
+    padding: 5%;
+  }
+
+  .suggested-deck-card {
+    width: 23.5%;
+    min-width: 0;
+  }
+
+  .deck-edit-actions {
+    width: auto;
+
+    display: flex;
+    column-gap: 4%;
+  }
+
+  .deck-cancel-button,
+  .deck-submit-button {
+    padding: 7px 10px;
+
+    font-size: clamp(0.7rem, 2vw, 0.85rem);
+  }
+
+  .deck-update-button {
+    margin-left: auto;
+  }
+
+  .deck-edit-input {
+    width: 100%;
+  }
+
+  .deck-info {
+    flex-direction: column;
+
+    row-gap: 0.7rem;
+  }
+
+  .deck-info-item {
+    width: 100%;
+  }
+}
