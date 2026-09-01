@@ -7,7 +7,7 @@ export default function About() {
     <div className="page-grid">
       <div className="about-content">
         <div className="about-title">
-          <span className="royal-text">ROYALE</span>
+          <span className="royal-text">ROYA</span>
           <span className="lab-text">LAB</span>
         </div>
 
