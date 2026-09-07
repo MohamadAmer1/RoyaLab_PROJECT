@@ -32,7 +32,7 @@ export default function Home() {
 
         <div className="home-actions">
           <Link to="/cards">Browse Cards 🎴</Link>
-          <Link to="/meta">Arena Meta 📊</Link>
+          <Link to="/community">Arena Meta 📊</Link>
           <Link to="/decks">Check Decks 🔎</Link>
         </div>
 
