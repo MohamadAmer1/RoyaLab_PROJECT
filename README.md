@@ -53,8 +53,8 @@ The application allows users to explore Clash Royale cards, build and save decks
 ### Home Page
 
 <p align="center">
-  <img src="./src/assets/screenshots/home/home1.png" width="48%">
-  <img src="./src/assets/screenshots/home/home2.png" width="48%">
+  <img src="./src/assets/screenShots/home/home1.png" width="48%">
+  <img src="./src/assets/screenShots/home/home2.png" width="48%">
 </p>
 
 ### About Page
