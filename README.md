@@ -189,3 +189,9 @@ The main Firestore collections used in the project are:
 cards
 decks
 comments
+
+---
+
+## 👨‍💻 Author
+
+Created by **Mohamad Amer**.
