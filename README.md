@@ -59,23 +59,37 @@ The application allows users to explore Clash Royale cards, build and save decks
 
 ### About Page
 
-![About Page](./src/assets/screenshots/about/about1.png)(./src/assets/screenshots/about)
+<p align="center">
+  <img src="./src/assets/screenShots/about/about1.png" width="48%">
+  <img src="./src/assets/screenShots/about/about2.png" width="48%">
+</p>
 
 ### Cards Explorer
 
-![Cards Explorer](./src/assets/screenshots/cards.png)
+<p align="center">
+  <img src="./src/assets/screenShots/cards/cards1.png" width="48%">
+  <img src="./src/assets/screenShots/cards/cards2.png" width="48%">
+</p>
 
 ### Deck Builder
 
-![Deck Builder](./src/assets/screenshots/deck-builder.png)
+<p align="center">
+  <img src="./src/assets/screenShots/deckBuilder/deck-builder1.png" width="48%">
+  <img src="./src/assets/screenShots/deckBuilder/deck-builder2.png" width="48%">
+</p>
 
 ### Saved Decks
 
-![Saved Decks](./src/assets/screenshots/saved-decks.png)()
+<p align="center">
+  <img src="./src/assets/screenShots/suggestedDecks/saved-decks.png" width="96%">
+</p>
 
 ### Community Suggestions
 
-![Community Suggestions](./src/assets/screenshots/community.png)
+<p align="center">
+  <img src="./src/assets/screenShots/community/community1.png" width="48%">
+  <img src="./src/assets/screenShots/community/community2.png" width="48%">
+</p>
 
 ---
 
@@ -86,6 +100,14 @@ The application allows users to explore Clash Royale cards, build and save decks
 The Home page introduces RoyaLab and provides quick access to the main features of the application.
 
 It also displays card statistics and highlights cards based on their win rate and use rate.
+
+---
+
+### About
+
+The About page introduces RoyaLab and explains the main idea behind the project, its purpose, and the features available in the application.
+
+It also presents the technologies, libraries, and tools used to build the project, including React, Firebase/Firestore, React Router, Recharts, Lucide React, React Toastify, JavaScript, HTML, CSS, Vite, and Netlify.
 
 ---
 
@@ -103,14 +125,6 @@ Users can search for cards by name and filter them by:
 - Elixir cost
 
 Cards also include interactive animations such as evolution image switching and card flipping.
-
----
-
-### Arena Meta
-
-The Arena Meta page allows users to view and compare card statistics.
-
-It helps users understand card performance based on information such as win rate and use rate.
 
 ---
 
